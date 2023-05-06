@@ -1,0 +1,45 @@
+//require mongoose
+//require schema
+
+//create the controller
+//middleware
+    //add user
+    //encryption
+
+    //verify user
+    //hashing
+
+    //delete user
+    
+    //update user
+
+//export the controller
+
+// //userdocument
+// const newUser = await User.create(username: "nam", password: "password")
+// {
+//       _id: bjectID("fjdsafd")
+//          you ned to parse the above. newUawe._id.toString(); if you don't include _, it parses to string
+//cookieparser in top of server file, npm install it
+//const cookieParser = require = 'cookie-parser'
+//app.user(cookieParser());
+
+//     username: ,
+//     password:
+// }
+const User = require('../models/User.js')
+
+const userController = {};
+userController.createUser = async (req, res, next) => {
+    try{
+        const newUser = await User.create({ username: "name", password: "password"})
+        const ssid = newUser._id.toString();
+        res.cookie('ssid', ssid)
+        // res.status(200) in anonymous function at end
+    } catch(err){
+
+    }
+
+}
+
+
